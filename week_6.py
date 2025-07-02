@@ -8,7 +8,7 @@ phonebook = {
 
 while True:
     print("\nPhonebook Lookup")
-    name = input("Enter a name : ")
+    name = input("Enter a name :")
 
     if name.lower() == 'exit':
         print("Exiting the phonebook. Goodbye!")
