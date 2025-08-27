@@ -13,6 +13,7 @@ def check_age(age):
     else:
         print(f"Age entered: {age}")
 
+22
 
 try:
     age_input = int(input("Enter your age: "))
