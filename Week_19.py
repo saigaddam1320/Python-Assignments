@@ -1,4 +1,4 @@
-# Base class
+
 class Vehicle:
     def __init__(self, brand, model):
         self.brand = brand
@@ -10,7 +10,7 @@ class Vehicle:
     def start(self):
         print(f"{self.brand} {self.model} is starting...")
 
-# Child class 1
+
 
 
 class Bike(Vehicle):
@@ -25,7 +25,7 @@ class Bike(Vehicle):
     def wheelie(self):
         print(f"{self.brand} {self.model} is doing a wheelie!")
 
-# Child class 2
+
 
 
 class Bus(Vehicle):
@@ -41,7 +41,6 @@ class Bus(Vehicle):
         print(f"{self.brand} {self.model} is honking: Honk! Honk!")
 
 
-# --- Usage ---
 bike1 = Bike("Yamaha", "R15", 155)
 bus1 = Bus("Volvo", "9400", 50)
 
