@@ -1,0 +1,91 @@
+{
+  "info": {
+    "name": "Flask Products API",
+    "_postman_id": "12345678-abcd-efgh-1234-abcdef123456",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/health"
+      }
+    },
+    {
+      "name": "Create product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Laptop\",\n  \"price\": 999.99,\n  \"in_stock\": true\n}"
+        },
+        "url": "{{base_url}}/products"
+      }
+    },
+    {
+      "name": "List products",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/products?limit=50"
+      }
+    },
+    {
+      "name": "Filter + sort",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/products?q=lap&min_price=500&sort=-price"
+      }
+    },
+    {
+      "name": "Get product by id",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/products/1"
+      }
+    },
+    {
+      "name": "Update product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"price\": 1099.0,\n  \"in_stock\": false\n}"
+        },
+        "url": "{{base_url}}/products/1"
+      }
+    },
+    {
+      "name": "Delete product",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base_url}}/products/1"
+      }
+    },
+    {
+      "name": "Price stats",
+      "request": {
+        "method": "GET",
+        "url": "{{base_url}}/products/stats/price"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000"
+    }
+  ]
+}

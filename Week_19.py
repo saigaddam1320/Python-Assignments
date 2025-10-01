@@ -10,10 +10,7 @@ class Vehicle:
     def start(self):
         print(f"{self.brand} {self.model} is starting...")
 
-
-
-
-classBike (Vehicle):
+class Bike (Vehicle):
     def __init__(self, brand, model, engine_cc):
         super().__init__(brand, model)
         self.engine_cc = engine_cc

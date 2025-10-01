@@ -3,8 +3,7 @@ from datetime import datetime
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
-# --- Config ---
-# Use env var if provided, else default to local SQLite file
+
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///products.db")
 
 app = Flask(__name__)
@@ -13,7 +12,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-# --- Model ---
 class Product(db.Model):
     __tablename__ = "products"
     id = db.Column(db.Integer, primary_key=True)
@@ -35,7 +33,6 @@ class Product(db.Model):
 with app.app_context():
     db.create_all()
 
-# --- Helpers for common queries ---
 def apply_filters(query):
     q = request.args.get("q")
     min_price = request.args.get("min_price", type=float)

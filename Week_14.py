@@ -9,6 +9,6 @@ with open(file_name, "a") as f:
 with open(file_name, "r") as f:
     lines = f.readlines()
 
-last_three = lines[-3:]
+last_three = lines[-5:]
 for line in last_three:
     print(line.strip())
